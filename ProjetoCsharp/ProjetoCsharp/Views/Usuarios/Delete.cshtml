@@ -1,0 +1,59 @@
+﻿@model ProjetoCsharp.Models.Entidades.Usuario
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Você tem certeza que deseja deletar este usuário?</h3>
+<div>
+    <h4>Usuario</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nomeUsuario)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nomeUsuario)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TipoUsuario)
+        </dt>
+        
+        <dd class="col-sm-10">
+            @*@Html.DisplayFor(model => model.TipoUsuario)*@
+
+            @if (Model.TipoUsuario == 1)
+            {
+                <label>Administrador</label>
+            }
+            else if(Model.TipoUsuario == 2)
+            {
+                <label>Técnico</label>
+            }
+            else if(Model.TipoUsuario == 3)
+            {
+                <label>Usuário Simples</label>
+            }
+
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.idade)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.idade)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Voltar para lista</a>
+    </form>
+</div>

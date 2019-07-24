@@ -1,0 +1,56 @@
+@model visualteste.Models.Automovel
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+
+<h4>Automovel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="proprietario" class="control-label"></label>
+                <input asp-for="proprietario" class="form-control" />
+                <span asp-validation-for="proprietario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="data_lancamento" class="control-label"></label>
+                <input asp-for="data_lancamento" class="form-control" />
+                <span asp-validation-for="data_lancamento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="valor" class="control-label"></label>
+                <input asp-for="valor" class="form-control" />
+                <span asp-validation-for="valor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="numero_de_portas" class="control-label"></label>
+                <input asp-for="numero_de_portas" class="form-control" />
+                <span asp-validation-for="numero_de_portas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="avariacoes" class="control-label"></label>
+                <input asp-for="avariacoes" class="form-control" />
+                <span asp-validation-for="avariacoes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+</body>
+</html>
